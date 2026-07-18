@@ -1,0 +1,95 @@
+/* =========================================================
+   Componentes reutilizáveis — botões, links, acordeão.
+   ========================================================= */
+
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 54px;
+  /* padding-block: 0 é obrigatório — sem ele o padding padrão do <button>
+     do navegador vaza e desalinha o texto em 1px. */
+  padding-block: 0;
+  padding-inline: 23px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: .82rem;
+  transition: transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+}
+.button svg {
+  width: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+.button:hover { transform: translateY(-2px); }
+.button--small { min-height: 42px; padding-inline: 18px; font-size: .74rem; }
+.button--primary { color: var(--ink); background: var(--lavender); }
+.button--primary:hover { background: var(--lavender-hover); }
+.button--ghost { color: inherit; border-color: currentColor; background: transparent; }
+.button--dark { color: var(--cream); background: var(--ink); }
+.button--light { color: var(--ink); background: var(--cream); }
+.button--wide { width: 100%; }
+
+.text-link { display: inline-block; padding-bottom: 5px; font-size: .85rem; font-weight: 700; }
+.text-link--dark { color: var(--ink); }
+
+.round-link {
+  display: grid;
+  width: 74px;
+  height: 74px;
+  place-items: center;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  color: var(--cream);
+  background: var(--ink);
+  cursor: pointer;
+}
+.round-link svg { width: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+
+/* --- Acordeão ---
+   <details>/<summary> nativo: teclado, aria-expanded e o painel sumindo da
+   árvore de acessibilidade quando fechado vêm de graça. Zero JS. */
+.accordion { border-top: 1px solid var(--line-light); }
+.accordion-item { border-bottom: 1px solid var(--line-light); }
+.accordion-item summary {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 0;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  font-weight: 600;
+  list-style: none;
+}
+.accordion-item summary::-webkit-details-marker { display: none; }
+.accordion-item summary i {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  margin-left: 20px;
+}
+.accordion-item summary i::before,
+.accordion-item summary i::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 18px;
+  height: 1px;
+  background: var(--ink);
+  transition: transform .3s ease;
+}
+.accordion-item summary i::after { transform: rotate(90deg); }
+.accordion-item[open] summary i::after { transform: rotate(0); }
+.accordion-panel p { margin: 0; padding: 0 40px 26px 0; color: var(--on-light-60); }

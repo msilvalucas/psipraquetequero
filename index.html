@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Descubra qual experiência do Clube PsiPraQueTeQuero combina com o seu momento profissional: Imersão, Travessia, Clínica 360º ou Singular." />
+  <meta name="theme-color" content="#241821" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <title>Formação e desenvolvimento para psicólogos | Clube PsiPraQueTeQuero</title>
+
+  <!-- TODO ANTES DE PUBLICAR: trocar SEU-DOMINIO.com.br pelo domínio real em todas as URLs abaixo. -->
+  <link rel="canonical" href="https://SEU-DOMINIO.com.br/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Clube PsiPraQueTeQuero" />
+  <meta property="og:url" content="https://SEU-DOMINIO.com.br/" />
+  <meta property="og:title" content="Clube PsiPraQueTeQuero — Encontre o seu próximo caminho" />
+  <meta property="og:description" content="Descubra qual experiência combina com o seu momento profissional: Imersão, Travessia, Clínica 360º ou Singular." />
+  <!-- TODO: exportar uma imagem 1200x630 para assets/og-image.jpg. Sem ela, links no WhatsApp e Instagram aparecem sem preview. -->
+  <meta property="og:image" content="https://SEU-DOMINIO.com.br/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Marca que o JS está vivo. Os estados iniciais escondidos das animações
+       são todos prefixados com .js — sem script, nada some da página. -->
+  <script>document.documentElement.classList.add("js");</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/quiz.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Clube PsiPraQueTeQuero",
+    "description": "Clube de desenvolvimento profissional para estudantes e psicólogos, com quatro experiências: Imersão, Travessia, Clínica 360º e Singular.",
+    "url": "https://SEU-DOMINIO.com.br/",
+    "inLanguage": "pt-BR",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Caminhos do Clube",
+      "itemListElement": [
+        { "@type": "Course", "name": "Imersão", "description": "Encontro intensivo e ao vivo para aprofundar uma temática específica da prática clínica.", "provider": { "@type": "EducationalOrganization", "name": "Clube PsiPraQueTeQuero" } },
+        { "@type": "Course", "name": "Travessia", "description": "Grupo de leitura e reflexão mediado, com encontros quinzenais.", "provider": { "@type": "EducationalOrganization", "name": "Clube PsiPraQueTeQuero" } },
+        { "@type": "Course", "name": "Clínica 360º", "description": "Formação estruturada em turma para construir uma atuação clínica segura e sustentável.", "provider": { "@type": "EducationalOrganization", "name": "Clube PsiPraQueTeQuero" } },
+        { "@type": "Course", "name": "Singular", "description": "Mentoria individual para diagnosticar gargalos e construir um plano de desenvolvimento.", "provider": { "@type": "EducationalOrganization", "name": "Clube PsiPraQueTeQuero" } }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="#inicio" aria-label="Clube PsiPraQueTeQuero — início">
+      <span class="brand-mark" aria-hidden="true">ψ</span>
+      <span class="brand-copy">
+        <strong>PsiPraQueTeQuero</strong>
+        <small>Clube de desenvolvimento profissional</small>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="#caminhos">Caminhos</a>
+      <a href="#metodo">Nossa visão</a>
+      <a href="#sobre">Sobre</a>
+      <button class="button button--small button--ghost" type="button" data-open-quiz>
+        Descobrir meu caminho
+      </button>
+    </nav>
+
+    <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile" data-menu-button>
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="menu-mobile" data-mobile-menu aria-hidden="true">
+    <nav aria-label="Navegação móvel">
+      <a href="#caminhos">Caminhos</a>
+      <a href="#metodo">Nossa visão</a>
+      <a href="#sobre">Sobre</a>
+      <button class="button button--light" type="button" data-open-quiz>Descobrir meu caminho</button>
+    </nav>
+  </div>
+
+  <main id="conteudo">
+    <section class="hero section-dark" id="inicio">
+      <div class="hero-orbit hero-orbit--one" aria-hidden="true"></div>
+      <div class="hero-orbit hero-orbit--two" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal-line">Desenvolvimento profissional em Psicologia</p>
+          <h1 class="hero-title">
+            <span class="title-flow">Você não precisa de mais um caminho <em>genérico.</em></span>
+          </h1>
+          <p class="hero-description reveal-copy">
+            Precisa compreender qual é o próximo passo para o momento que está vivendo agora. Conheça quatro experiências criadas para diferentes desafios da trajetória clínica.
+          </p>
+          <div class="hero-actions reveal-copy">
+            <button class="button button--primary magnetic" type="button" data-open-quiz>
+              <span>Descobrir meu próximo passo</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <a class="text-link" href="#caminhos">Explorar os quatro caminhos</a>
+          </div>
+          <ul class="hero-meta reveal-copy">
+            <li><i aria-hidden="true"></i> Menos de 2 minutos</li>
+            <li><i aria-hidden="true"></i> Recomendação personalizada</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" role="img" aria-label="Quatro caminhos de desenvolvimento profissional: Imersão, Travessia, Clínica 360º e Singular.">
+          <div class="visual-shell" aria-hidden="true">
+            <div class="visual-center">
+              <span>Seu momento</span>
+              <strong>Seu caminho</strong>
+            </div>
+            <article class="orbit-card orbit-card--one" data-parallax="16">
+              <span>01</span><strong>Imersão</strong><small>Aprofundamento</small>
+            </article>
+            <article class="orbit-card orbit-card--two" data-parallax="12">
+              <span>02</span><strong>Travessia</strong><small>Consistência</small>
+            </article>
+            <article class="orbit-card orbit-card--three" data-parallax="18">
+              <span>03</span><strong>Clínica 360º</strong><small>Estrutura</small>
+            </article>
+            <article class="orbit-card orbit-card--four" data-parallax="14">
+              <span>04</span><strong>Singular</strong><small>Direcionamento</small>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-footer container">
+        <p>A graduação oferece a base.</p>
+        <p>A construção da clínica acontece no caminho.</p>
+      </div>
+    </section>
+
+    <section class="manifesto section-light" id="metodo">
+      <div class="container manifesto-grid">
+        <div class="section-index" aria-hidden="true">01 / Nossa visão</div>
+        <div class="manifesto-content">
+          <p class="eyebrow">Entre a teoria e a prática</p>
+          <h2 class="section-title split-heading">
+            Uma carreira não é construída apenas pelo acúmulo de conteúdos.
+          </h2>
+          <p class="manifesto-lead reveal-section">
+            Ela é construída pela capacidade de refletir, aplicar, decidir, trocar e desenvolver uma identidade profissional própria.
+          </p>
+        </div>
+        <div class="manifesto-aside reveal-section">
+          <p>
+            Por isso, o Clube reúne experiências diferentes para necessidades diferentes — de uma questão pontual a um acompanhamento totalmente individual.
+          </p>
+          <button class="round-link magnetic" type="button" data-open-quiz aria-label="Iniciar questionário">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="paths-section" id="caminhos">
+      <div class="container paths-heading">
+        <div>
+          <p class="eyebrow">Quatro experiências. Um mesmo compromisso.</p>
+          <h2 class="section-title">Qual é o seu momento?</h2>
+        </div>
+        <p>
+          Escolha pelo desafio que precisa resolver agora — não pelo produto mais completo ou mais caro.
+        </p>
+      </div>
+
+      <nav class="path-overview container" aria-label="Resumo dos quatro caminhos">
+        <a class="path-overview-card path-overview-card--immersion" href="#produto-imersao">
+          <span>01</span>
+          <strong>Imersão</strong>
+          <small>Para aprofundar um tema pontual</small>
+        </a>
+        <a class="path-overview-card path-overview-card--crossing" href="#produto-travessia">
+          <span>02</span>
+          <strong>Travessia</strong>
+          <small>Para manter constância nos estudos</small>
+        </a>
+        <a class="path-overview-card path-overview-card--clinic" href="#produto-clinica360">
+          <span>03</span>
+          <strong>Clínica 360º</strong>
+          <small>Para estruturar a carreira clínica</small>
+        </a>
+        <a class="path-overview-card path-overview-card--singular" href="#produto-singular">
+          <span>04</span>
+          <strong>Singular</strong>
+          <small>Para receber direção individual</small>
+        </a>
+      </nav>
+
+      <div class="paths-stack">
+        <article class="path-card path-card--immersion" id="produto-imersao" data-product="imersao">
+          <div class="path-sticky container">
+            <div class="path-number">01</div>
+            <div class="path-main">
+              <p class="path-kicker">Quando existe um tema específico que precisa de atenção agora</p>
+              <h3>Imersão</h3>
+              <p class="path-description">
+                Um encontro intensivo, ao vivo e acessível para compreender, discutir e aplicar uma temática específica da prática clínica.
+              </p>
+              <div class="path-tags">
+                <span>Encontro pontual</span><span>Ao vivo</span><span>Aplicação prática</span>
+              </div>
+            </div>
+            <div class="path-side">
+              <p class="path-question">“Quero aprofundar um tema sem ingressar em uma formação completa.”</p>
+              <ul>
+                <li>Conteúdo concentrado</li>
+                <li>Espaço para perguntas</li>
+                <li>Primeiro contato com a metodologia</li>
+              </ul>
+              <button class="button button--dark magnetic" type="button" data-open-quiz data-product-interest="imersao">
+                Ver se é para mim
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="path-card path-card--crossing" id="produto-travessia" data-product="travessia">
+          <div class="path-sticky container">
+            <div class="path-number">02</div>
+            <div class="path-main">
+              <p class="path-kicker">Quando estudar sozinho já não sustenta a constância que você deseja</p>
+              <h3>Travessia</h3>
+              <p class="path-description">
+                Um grupo de leitura e reflexão mediado para transformar estudo solitário em rotina, troca e aprofundamento clínico.
+              </p>
+              <div class="path-tags">
+                <span>Encontros quinzenais</span><span>Curadoria</span><span>Comunidade</span>
+              </div>
+            </div>
+            <div class="path-side">
+              <p class="path-question">“Quero manter uma rotina consistente de estudo e construir conhecimento com outras pessoas.”</p>
+              <ul>
+                <li>Grupos por abordagem</li>
+                <li>Mediação especializada</li>
+                <li>Teoria conectada à prática</li>
+              </ul>
+              <button class="button button--dark magnetic" type="button" data-open-quiz data-product-interest="travessia">
+                Ver se é para mim
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="path-card path-card--clinic" id="produto-clinica360" data-product="clinica360">
+          <div class="path-sticky container">
+            <div class="path-number">03</div>
+            <div class="path-main">
+              <p class="path-kicker">Quando não basta resolver uma dificuldade isolada</p>
+              <h3>Clínica 360º</h3>
+              <p class="path-description">
+                Uma formação estruturada para transformar conhecimento teórico em uma atuação clínica segura, organizada e profissionalmente sustentável.
+              </p>
+              <div class="path-tags">
+                <span>Formação completa</span><span>Em turma</span><span>Carreira clínica</span>
+              </div>
+            </div>
+            <div class="path-side">
+              <p class="path-question">“Quero construir uma base completa para iniciar, retomar ou desenvolver minha clínica.”</p>
+              <ul>
+                <li>Raciocínio e prática clínica</li>
+                <li>Posicionamento profissional</li>
+                <li>Gestão e sustentabilidade</li>
+              </ul>
+              <button class="button button--light magnetic" type="button" data-open-quiz data-product-interest="clinica360">
+                Ver se é para mim
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="path-card path-card--singular" id="produto-singular" data-product="singular">
+          <div class="path-sticky container">
+            <div class="path-number">04</div>
+            <div class="path-main">
+              <p class="path-kicker">Quando o desafio é tão particular quanto a sua trajetória</p>
+              <h3>Singular</h3>
+              <p class="path-description">
+                Uma mentoria individual para diagnosticar gargalos, definir prioridades e construir um plano de desenvolvimento alinhado à sua realidade.
+              </p>
+              <div class="path-tags">
+                <span>Individual</span><span>Personalizado</span><span>Estratégico</span>
+              </div>
+            </div>
+            <div class="path-side">
+              <p class="path-question">“Preciso de um olhar próximo para decisões e desafios que soluções genéricas não resolvem.”</p>
+              <ul>
+                <li>Diagnóstico profissional</li>
+                <li>Plano individual</li>
+                <li>Acompanhamento próximo</li>
+              </ul>
+              <button class="button button--dark magnetic" type="button" data-open-quiz data-product-interest="singular">
+                Ver se é para mim
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="decision-section section-dark">
+      <div class="container decision-grid">
+        <div>
+          <p class="eyebrow">Ainda não sabe qual escolher?</p>
+          <h2 class="section-title">Não tente se encaixar em uma oferta.</h2>
+        </div>
+        <div class="decision-copy">
+          <p>
+            Conte o que está vivendo e nós indicaremos a experiência mais coerente com o seu momento, o formato de acompanhamento que procura e a profundidade que deseja.
+          </p>
+          <button class="button button--primary button--wide magnetic" type="button" data-open-quiz>
+            <span>Fazer o diagnóstico gratuito</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <div class="decision-proof">
+            <span>6 perguntas</span><span>Resultado imediato</span><span>Sem compromisso</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="sobre">
+      <div class="container about-grid">
+        <div class="about-visual reveal-section">
+          <div class="about-monogram">ψ</div>
+          <div class="about-caption">Clube PsiPraQueTeQuero</div>
+        </div>
+        <div class="about-copy reveal-section">
+          <p class="eyebrow">Sobre o Clube</p>
+          <h2 class="section-title">Um espaço para construir repertório, direção e identidade profissional.</h2>
+          <p>
+            O Clube PsiPraQueTeQuero nasceu para apoiar estudantes e profissionais nos desafios que surgem entre a formação acadêmica e a realidade da prática clínica.
+          </p>
+          <p>
+            Aqui, aprendizado não significa apenas assistir a mais aulas. Significa criar espaços de estudo, reflexão, troca e acompanhamento capazes de produzir movimentos reais na trajetória profissional.
+          </p>
+          <a class="text-link text-link--dark" href="#caminhos">Conhecer os caminhos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section section-light">
+      <div class="container faq-grid">
+        <div>
+          <p class="eyebrow">Perguntas frequentes</p>
+          <h2 class="section-title">Antes de escolher.</h2>
+        </div>
+        <div class="accordion">
+          <details class="accordion-item">
+            <summary>Preciso ser psicólogo formado para participar?<i aria-hidden="true"></i></summary>
+            <div class="accordion-panel"><p>Depende da experiência. A Travessia e algumas Imersões podem receber estudantes, enquanto outras ofertas são direcionadas a profissionais formados ou que já atuam na clínica.</p></div>
+          </details>
+          <details class="accordion-item">
+            <summary>Os encontros acontecem ao vivo?<i aria-hidden="true"></i></summary>
+            <div class="accordion-panel"><p>Sim. Cada experiência possui sua própria dinâmica, frequência e duração. As informações específicas são apresentadas antes da inscrição.</p></div>
+          </details>
+          <details class="accordion-item">
+            <summary>Posso participar de mais de uma experiência?<i aria-hidden="true"></i></summary>
+            <div class="accordion-panel"><p>Sim. Os caminhos resolvem necessidades diferentes e podem acompanhar momentos distintos da sua trajetória profissional.</p></div>
+          </details>
+          <details class="accordion-item">
+            <summary>O diagnóstico substitui uma conversa com a equipe?<i aria-hidden="true"></i></summary>
+            <div class="accordion-panel"><p>Não. Ele oferece uma recomendação inicial. Ao final, você poderá conversar com a equipe caso queira validar a indicação antes de se inscrever.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta section-dark">
+      <div class="container final-cta-content">
+        <p class="eyebrow">Seu momento merece um caminho coerente</p>
+        <h2 class="final-title">Descubra o próximo passo da sua trajetória clínica.</h2>
+        <button class="button button--primary magnetic" type="button" data-open-quiz>
+          <span>Começar o diagnóstico</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <a class="brand brand--footer" href="#inicio">
+        <span class="brand-mark" aria-hidden="true">ψ</span>
+        <span class="brand-copy"><strong>PsiPraQueTeQuero</strong><small>Clube de desenvolvimento profissional</small></span>
+      </a>
+      <p>© <span data-current-year></span> Clube PsiPraQueTeQuero.</p>
+      <!-- TODO ANTES DE PUBLICAR: a Política de Privacidade é obrigatória — a página coleta
+           nome, e-mail e telefone com consentimento LGPD explícito. -->
+      <div class="footer-links">
+        <a href="https://instagram.com/SEU-PERFIL" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="/politica-de-privacidade">Política de privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="quiz-modal" data-quiz-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="quiz-title">
+    <div class="quiz-backdrop" data-close-quiz></div>
+    <div class="quiz-shell">
+      <header class="quiz-header">
+        <a class="brand brand--quiz" href="#" tabindex="-1">
+          <span class="brand-mark" aria-hidden="true">ψ</span>
+          <span class="brand-copy"><strong>PsiPraQueTeQuero</strong><small>Diagnóstico de caminho</small></span>
+        </a>
+        <div class="quiz-progress-wrap">
+          <span data-progress-label>Introdução</span>
+          <div class="quiz-progress"><i data-progress-bar></i></div>
+        </div>
+        <button class="quiz-close" type="button" aria-label="Fechar diagnóstico" data-close-quiz>
+          <span></span><span></span>
+        </button>
+      </header>
+
+      <div class="quiz-body" data-quiz-body>
+        <section class="quiz-screen is-active" data-screen="intro">
+          <div class="quiz-content quiz-content--intro">
+            <p class="eyebrow">Diagnóstico de caminho</p>
+            <h2 id="quiz-title">Encontre a experiência mais alinhada ao seu momento.</h2>
+            <p>Responda seis perguntas sobre sua trajetória, sua principal necessidade e o tipo de acompanhamento que procura.</p>
+            <div class="quiz-intro-meta"><span>6 perguntas</span><span>Menos de 2 minutos</span><span>Resultado imediato</span></div>
+            <button class="button button--primary" type="button" data-start-quiz>Começar agora</button>
+          </div>
+        </section>
+
+        <section class="quiz-screen" data-screen="questions">
+          <form class="quiz-form" data-quiz-form novalidate>
+            <fieldset class="question-slide" data-question="professionalMoment"None>
+              <legend class="question-legend">
+                <span class="question-count">01 / 06</span>
+                <h2>Em qual momento profissional você está?</h2>
+              </legend>
+              <div class="answers-grid">
+                <label class="answer-card"><input type="radio" name="professionalMoment" value="student" /><span class="answer-letter">A</span><span>Sou estudante de Psicologia.</span></label>
+                <label class="answer-card"><input type="radio" name="professionalMoment" value="newlyGraduated" /><span class="answer-letter">B</span><span>Sou recém-formado e estou iniciando os atendimentos.</span></label>
+                <label class="answer-card"><input type="radio" name="professionalMoment" value="structuringCareer" /><span class="answer-letter">C</span><span>Já atuo, mas preciso estruturar melhor minha carreira.</span></label>
+                <label class="answer-card"><input type="radio" name="professionalMoment" value="experiencedWithSpecificChallenges" /><span class="answer-letter">D</span><span>Já tenho trajetória e enfrento desafios específicos.</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="question-slide" data-question="mainNeed" hidden>
+              <legend class="question-legend">
+                <span class="question-count">02 / 06</span>
+                <h2>Qual é a sua principal necessidade neste momento?</h2>
+              </legend>
+              <div class="answers-grid">
+                <label class="answer-card"><input type="radio" name="mainNeed" value="specificTopic" /><span class="answer-letter">A</span><span>Aprofundar um tema específico.</span></label>
+                <label class="answer-card"><input type="radio" name="mainNeed" value="studyRoutine" /><span class="answer-letter">B</span><span>Criar uma rotina consistente de leitura e estudo.</span></label>
+                <label class="answer-card"><input type="radio" name="mainNeed" value="completeDevelopment" /><span class="answer-letter">C</span><span>Desenvolver diferentes competências para construir minha clínica.</span></label>
+                <label class="answer-card"><input type="radio" name="mainNeed" value="individualDirection" /><span class="answer-letter">D</span><span>Receber orientação para um desafio particular.</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="question-slide" data-question="preferredExperience" hidden>
+              <legend class="question-legend">
+                <span class="question-count">03 / 06</span>
+                <h2>Que tipo de experiência você procura?</h2>
+              </legend>
+              <div class="answers-grid">
+                <label class="answer-card"><input type="radio" name="preferredExperience" value="oneOffMeeting" /><span class="answer-letter">A</span><span>Um encontro pontual e intensivo.</span></label>
+                <label class="answer-card"><input type="radio" name="preferredExperience" value="recurringStudyGroup" /><span class="answer-letter">B</span><span>Um grupo recorrente de estudos e troca.</span></label>
+                <label class="answer-card"><input type="radio" name="preferredExperience" value="structuredProgram" /><span class="answer-letter">C</span><span>Uma formação estruturada com começo, meio e fim.</span></label>
+                <label class="answer-card"><input type="radio" name="preferredExperience" value="individualMentoring" /><span class="answer-letter">D</span><span>Um acompanhamento individual e personalizado.</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="question-slide" data-question="currentSituation" hidden>
+              <legend class="question-legend">
+                <span class="question-count">04 / 06</span>
+                <h2>Qual frase mais representa o que você está vivendo?</h2>
+              </legend>
+              <div class="answers-grid">
+                <label class="answer-card"><input type="radio" name="currentSituation" value="specificQuestion" /><span class="answer-letter">A</span><span>“Existe um assunto que preciso entender melhor.”</span></label>
+                <label class="answer-card"><input type="radio" name="currentSituation" value="noStudyConsistency" /><span class="answer-letter">B</span><span>“Tenho dificuldade para manter constância nos estudos.”</span></label>
+                <label class="answer-card"><input type="radio" name="currentSituation" value="theoryWithoutStructure" /><span class="answer-letter">C</span><span>“Conheço a teoria, mas ainda não estruturei minha carreira.”</span></label>
+                <label class="answer-card"><input type="radio" name="currentSituation" value="genericSolutionsDoNotWork" /><span class="answer-letter">D</span><span>“Meu problema é particular e soluções genéricas não funcionam.”</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="question-slide" data-question="supportLevel" hidden>
+              <legend class="question-legend">
+                <span class="question-count">05 / 06</span>
+                <h2>Qual nível de acompanhamento você deseja?</h2>
+              </legend>
+              <div class="answers-grid">
+                <label class="answer-card"><input type="radio" name="supportLevel" value="singleSession" /><span class="answer-letter">A</span><span>Orientação concentrada em um único encontro.</span></label>
+                <label class="answer-card"><input type="radio" name="supportLevel" value="mediatedGroup" /><span class="answer-letter">B</span><span>Mediação profissional dentro de um grupo.</span></label>
+                <label class="answer-card"><input type="radio" name="supportLevel" value="completeJourney" /><span class="answer-letter">C</span><span>Um percurso completo de desenvolvimento em turma.</span></label>
+                <label class="answer-card"><input type="radio" name="supportLevel" value="individualAttention" /><span class="answer-letter">D</span><span>Atenção individual voltada à minha realidade.</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="question-slide" data-question="availability" hidden>
+              <legend class="question-legend">
+                <span class="question-count">06 / 06</span>
+                <h2>Qual formato combina melhor com sua disponibilidade?</h2>
+              </legend>
+              <div class="answers-grid">
+                <label class="answer-card"><input type="radio" name="availability" value="oneOff" /><span class="answer-letter">A</span><span>Uma atividade pontual.</span></label>
+                <label class="answer-card"><input type="radio" name="availability" value="fortnightly" /><span class="answer-letter">B</span><span>Encontros quinzenais contínuos.</span></label>
+                <label class="answer-card"><input type="radio" name="availability" value="fullProgram" /><span class="answer-letter">C</span><span>Compromisso com uma formação completa.</span></label>
+                <label class="answer-card"><input type="radio" name="availability" value="customSchedule" /><span class="answer-letter">D</span><span>Uma agenda de acompanhamento individual.</span></label>
+              </div>
+            </fieldset>
+
+            <div class="quiz-navigation">
+              <button class="quiz-back" type="button" data-prev-question disabled>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Voltar
+              </button>
+              <p class="quiz-hint" data-quiz-hint>Selecione uma alternativa para continuar.</p>
+              <button class="quiz-next" type="button" data-next-question disabled>
+                <span data-next-label>Continuar</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section class="quiz-screen" data-screen="lead">
+          <div class="quiz-content lead-content">
+            <p class="eyebrow">Encontramos um caminho provável</p>
+            <h2>Receba sua recomendação completa.</h2>
+            <p>Preencha seus dados para ver o resultado e receber informações sobre a experiência indicada.</p>
+            <form class="lead-form" data-lead-form>
+              <div class="field-row">
+                <label><span>Seu nome</span><input type="text" name="name" autocomplete="name" required placeholder="Como podemos chamar você?" /></label>
+                <label><span>WhatsApp</span><input type="tel" name="whatsapp" autocomplete="tel" required inputmode="tel" placeholder="(00) 00000-0000" /></label>
+              </div>
+              <label><span>Seu melhor e-mail</span><input type="email" name="email" autocomplete="email" required placeholder="voce@exemplo.com" /></label>
+              <label class="consent"><input type="checkbox" name="consent" required /><span>Autorizo o contato da equipe do Clube sobre minha recomendação e produtos relacionados. Posso cancelar a qualquer momento.</span></label>
+              <p class="form-error" data-form-error role="alert"></p>
+              <button class="button button--primary button--wide" type="submit">Ver minha recomendação</button>
+            </form>
+          </div>
+        </section>
+
+        <section class="quiz-screen" data-screen="result">
+          <div class="result-layout">
+            <div class="result-index">
+              <span>Seu caminho recomendado</span>
+              <strong data-result-number>03</strong>
+            </div>
+            <div class="result-content">
+              <p class="eyebrow">Com base nas suas respostas</p>
+              <h2 data-result-title>Clínica 360º</h2>
+              <p class="result-headline" data-result-headline>Uma formação estruturada para construir uma base completa para viver da clínica.</p>
+              <p data-result-description>Pelas suas respostas, você não está buscando resolver apenas uma dificuldade isolada.</p>
+              <div class="result-reasons" data-result-reasons></div>
+              <div class="result-actions">
+                <a class="button button--primary" href="#" data-result-cta target="_blank" rel="noopener">Conhecer o caminho recomendado</a>
+                <button class="text-button" type="button" data-restart-quiz>Refazer diagnóstico</button>
+              </div>
+              <div class="secondary-result" data-secondary-result hidden>
+                <span>Outro caminho que também pode fazer sentido:</span>
+                <strong data-secondary-title></strong>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

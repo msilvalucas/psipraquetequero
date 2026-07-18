@@ -1,0 +1,151 @@
+/* =========================================================
+   Animações — CSS puro. Substitui GSAP + ScrollTrigger (~70 KB
+   de CDN de terceiro que ficavam no caminho crítico do LCP).
+
+   Duas regras que valem para tudo aqui:
+
+   1. Nada some sem JS. Os estados iniciais escondidos são prefixados
+      com .js (marcado por um inline script no <head>). Sem JS, ou se o
+      IntersectionObserver falhar, o conteúdo aparece normalmente.
+
+   2. O <h1> — o elemento de LCP — anima a partir do primeiro frame de
+      render, sem delay e sem esperar download nenhum. Era isso que o
+      GSAP quebrava: o título ficava invisível até o CDN responder.
+   ========================================================= */
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes rise-title {
+  from { opacity: 0; transform: translateY(14%); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes bloom {
+  from { opacity: 0; transform: scale(.86); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes drift {
+  from { transform: rotate(-2deg); }
+  to   { transform: rotate(2deg); }
+}
+@keyframes bob {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-5px); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ---------- Entrada do herói ----------
+   Roda no primeiro frame. `backwards` aplica o estado inicial durante o
+   delay; `forwards` mantém o final. */
+.js .hero .eyebrow,
+.js .title-flow,
+.js .hero .reveal-copy,
+.js .visual-shell,
+.js .orbit-card {
+  animation-duration: .7s;
+  animation-timing-function: cubic-bezier(.16, 1, .3, 1);
+  animation-fill-mode: both;
+}
+
+.js .hero .eyebrow { animation-name: rise; animation-duration: .55s; }
+/* Sem animation-delay: qualquer atraso aqui atrasa o LCP na mesma medida. */
+.js .title-flow { animation-name: rise-title; animation-duration: .85s; }
+.js .hero .reveal-copy { animation-name: rise; }
+.js .hero-description.reveal-copy { animation-delay: .1s; }
+.js .hero-actions.reveal-copy { animation-delay: .17s; }
+.js .hero-meta.reveal-copy { animation-delay: .24s; }
+
+.js .visual-shell { animation-name: bloom; animation-duration: 1s; animation-delay: .1s; }
+.js .orbit-card { animation-name: bloom; animation-duration: .65s; }
+.js .orbit-card--one { animation-delay: .3s; }
+.js .orbit-card--two { animation-delay: .38s; }
+.js .orbit-card--three { animation-delay: .46s; }
+.js .orbit-card--four { animation-delay: .54s; }
+
+/* ---------- Movimento contínuo ----------
+   Só depois da entrada terminar, para os dois não brigarem pelo transform. */
+.js .visual-shell.is-settled {
+  animation: drift 24s ease-in-out infinite alternate;
+}
+.js .orbit-card.is-settled {
+  animation: bob 3.4s ease-in-out infinite alternate;
+}
+.js .orbit-card--two.is-settled { animation-delay: .24s; }
+.js .orbit-card--three.is-settled { animation-delay: .48s; }
+.js .orbit-card--four.is-settled { animation-delay: .72s; }
+
+/* ---------- Reveals no scroll (IntersectionObserver) ---------- */
+.js .reveal-section,
+.js .path-card .path-number,
+.js .path-card .path-main,
+.js .path-card .path-side {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity .8s cubic-bezier(.16, 1, .3, 1), transform .8s cubic-bezier(.16, 1, .3, 1);
+}
+.js .reveal-section.is-visible,
+.js .path-card.is-visible .path-number,
+.js .path-card.is-visible .path-main,
+.js .path-card.is-visible .path-side {
+  opacity: 1;
+  transform: translateY(0);
+}
+.js .path-card.is-visible .path-main { transition-delay: .09s; }
+.js .path-card.is-visible .path-side { transition-delay: .18s; }
+
+/* ---------- Parallax e botões magnéticos ----------
+   O JS só escreve duas custom properties; a composição fica com o CSS. */
+[data-parallax] {
+  transform: translate3d(var(--px, 0px), var(--py, 0px), 0);
+  transition: transform .8s cubic-bezier(.22, 1, .36, 1);
+}
+.magnetic {
+  transform: translate3d(var(--mx, 0px), var(--my, 0px), 0);
+  transition: transform .35s cubic-bezier(.22, 1, .36, 1), background .25s ease, color .25s ease, border-color .25s ease;
+}
+/* O :hover do .button também mexe no transform — sem isto, um cancelaria o outro. */
+.button.magnetic:hover { transform: translate3d(var(--mx, 0px), calc(var(--my, 0px) - 2px), 0); }
+
+/* ---------- Quiz ---------- */
+.quiz-screen.is-active > * { animation: rise .5s cubic-bezier(.16, 1, .3, 1) both; }
+.question-slide:not([hidden]) { animation: slide-in .4s ease-out both; }
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.quiz-screen[data-screen="result"].is-active .result-index { animation: rise .6s cubic-bezier(.16, 1, .3, 1) both; }
+.quiz-screen[data-screen="result"].is-active .result-content > * {
+  animation: rise .5s cubic-bezier(.16, 1, .3, 1) both;
+}
+.quiz-screen[data-screen="result"].is-active .result-content > *:nth-child(1) { animation-delay: .05s; }
+.quiz-screen[data-screen="result"].is-active .result-content > *:nth-child(2) { animation-delay: .12s; }
+.quiz-screen[data-screen="result"].is-active .result-content > *:nth-child(3) { animation-delay: .19s; }
+.quiz-screen[data-screen="result"].is-active .result-content > *:nth-child(4) { animation-delay: .26s; }
+.quiz-screen[data-screen="result"].is-active .result-content > *:nth-child(5) { animation-delay: .33s; }
+.quiz-screen[data-screen="result"].is-active .result-content > *:nth-child(6) { animation-delay: .40s; }
+
+/* ---------- Acordeão ---------- */
+.accordion-item[open] .accordion-panel { animation: fade-in .35s ease both; }
+
+/* ---------- Movimento reduzido ----------
+   O bloco global de base.css já zera durações. Aqui garantimos que nada
+   fique preso num estado inicial escondido, e desligamos os loops infinitos. */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal-section,
+  .js .path-card .path-number,
+  .js .path-card .path-main,
+  .js .path-card .path-side {
+    opacity: 1;
+    transform: none;
+  }
+  .js .visual-shell.is-settled,
+  .js .orbit-card.is-settled { animation: none; }
+  [data-parallax],
+  .magnetic,
+  .button.magnetic:hover { transform: none; }
+}

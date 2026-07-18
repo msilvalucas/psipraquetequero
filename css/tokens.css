@@ -1,0 +1,67 @@
+/* =========================================================
+   Tokens — a única fonte de verdade de cor, tipo e ritmo.
+   Antes havia dois blocos :root em conflito e três fontes
+   declaradas que a página nem carregava.
+   ========================================================= */
+
+:root {
+  /* Cores */
+  --ink: #241821;
+  --ink-soft: #4b3a46;
+  --cream: #f4efe7;
+  --paper: #fbf8f3;
+  --sand: #d9d0c5;          /* fundo da seção de caminhos */
+  --shell: #e6ddd1;         /* fundo do "Sobre" */
+  --night: #180f17;         /* rodapé */
+  --plum: #55436b;          /* card Clínica 360º */
+  --white: #fff;
+
+  --lavender: #b8a8da;
+  --lavender-hover: #c8b9e7;
+  --lavender-soft: #ddd4ee;
+  --sage: #99a78f;
+  --sage-soft: #dce2d6;
+  --clay-soft: #efd8cc;
+  --danger: #ffc3bd;
+
+  /* Superfícies sobre fundo escuro */
+  --on-dark-90: rgba(244, 239, 231, .9);
+  --on-dark-70: rgba(244, 239, 231, .7);
+  --on-dark-60: rgba(244, 239, 231, .6);
+  --on-dark-45: rgba(244, 239, 231, .45);
+  --on-dark-35: rgba(244, 239, 231, .35);
+  --line-dark: rgba(255, 255, 255, .12);
+  --line-dark-soft: rgba(255, 255, 255, .08);
+
+  /* Superfícies sobre fundo claro */
+  --on-light-60: rgba(36, 24, 33, .6);
+  --line-light: rgba(36, 24, 33, .16);
+  --line-light-soft: rgba(36, 24, 33, .13);
+
+  --shadow: 0 32px 80px rgba(36, 24, 33, .16);
+
+  /* Tipografia — as fontes que o index.html realmente carrega. */
+  --serif: "Newsreader", Georgia, serif;
+  --sans: "Manrope", system-ui, sans-serif;
+
+  /* Ritmo. 100% em vez de 100vw: 100vw inclui a barra de rolagem
+     e gerava overflow horizontal no desktop. */
+  --container: min(1380px, calc(100% - 72px));
+  --section-space: clamp(88px, 8vw, 124px);
+  --header-h: 100px;
+}
+
+@media (max-width: 1180px) {
+  :root { --container: min(100% - 44px, 1060px); }
+}
+
+@media (max-width: 1050px) {
+  :root { --container: min(100% - 40px, 960px); }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --container: calc(100% - 28px);
+    --section-space: 84px;
+  }
+}

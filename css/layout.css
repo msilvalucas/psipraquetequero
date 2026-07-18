@@ -1,0 +1,171 @@
+/* =========================================================
+   Layout — header, menu mobile e rodapé.
+   ========================================================= */
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 130;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1380px, calc(100% - 32px));
+  margin: 16px auto 0;
+  padding: 13px 16px 13px 18px;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  color: var(--cream);
+  transition: color .3s ease, background .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.site-header.is-scrolled {
+  color: var(--ink);
+  background: rgba(251, 248, 243, .86);
+  border-color: rgba(36, 24, 33, .08);
+  box-shadow: 0 12px 35px rgba(36, 24, 33, .08);
+  /* Safari ignora backdrop-filter sem o prefixo: sem isto o header
+     em scroll fica com texto escuro sobre conteúdo escuro. */
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+.brand { display: inline-flex; align-items: center; gap: 12px; }
+.brand-mark {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+}
+.brand-copy { display: grid; line-height: 1.1; }
+.brand-copy strong { font-size: .9rem; }
+.brand-copy small { margin-top: 4px; font-size: .62rem; opacity: .62; }
+
+.desktop-nav { display: flex; align-items: center; gap: 30px; }
+.desktop-nav > a { font-size: .78rem; font-weight: 600; }
+.desktop-nav > a::after,
+.text-link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .35s ease;
+}
+.desktop-nav > a:hover::after,
+.text-link:hover::after { transform: scaleX(1); transform-origin: left; }
+
+.menu-button {
+  display: none;
+  position: relative;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  color: inherit;
+  background: transparent;
+}
+.menu-button span {
+  display: block;
+  width: 18px;
+  height: 1px;
+  margin: 5px auto;
+  background: currentColor;
+  transform-origin: center;
+  transition: transform .28s ease, opacity .2s ease;
+}
+.menu-button[aria-expanded="true"] span:first-child { transform: translateY(3px) rotate(45deg); }
+.menu-button[aria-expanded="true"] span:last-child { transform: translateY(-3px) rotate(-45deg); }
+
+.mobile-menu { display: none; }
+
+@media (max-width: 1050px) {
+  .desktop-nav { display: none; }
+  .menu-button { display: block; }
+
+  /* O menu fica visualmente ligado ao header e não abre debaixo de um
+     header translúcido em scroll. */
+  .site-header.is-menu-open,
+  .site-header.is-menu-open.is-scrolled {
+    color: var(--cream);
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 120;
+    display: block;
+    padding: 104px 24px max(28px, env(safe-area-inset-bottom));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    color: var(--cream);
+    background: var(--ink);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-14px);
+    transition: opacity .3s ease, visibility .3s ease, transform .3s ease;
+  }
+  .mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .mobile-menu nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    width: min(100%, 560px);
+    min-height: 100%;
+    margin-inline: auto;
+    gap: clamp(14px, 3vh, 28px);
+    text-align: left;
+    font-family: var(--serif);
+    font-size: clamp(2.25rem, 7vw, 4rem);
+    line-height: .95;
+  }
+  .mobile-menu nav > a {
+    padding-block: 8px;
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .mobile-menu .button {
+    width: 100%;
+    margin-top: 12px;
+    font-family: var(--sans);
+    font-size: .82rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header { width: calc(100% - 20px); margin-top: 10px; }
+  .brand-copy small { display: none; }
+  .brand-mark { width: 36px; height: 36px; }
+  .mobile-menu { padding-inline: 18px; }
+  .mobile-menu nav { font-size: clamp(2.2rem, 12vw, 3.35rem); }
+}
+
+@media (max-width: 390px) {
+  .mobile-menu nav { font-size: 2.55rem; }
+}
+
+.site-footer { padding: 34px 0; color: rgba(244, 239, 231, .75); background: var(--night); }
+.footer-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 30px; }
+.site-footer p { margin: 0; font-size: .68rem; }
+.brand--footer { color: var(--cream); }
+.footer-links { display: flex; justify-content: flex-end; gap: 22px; font-size: .68rem; }
+
+@media (max-width: 760px) {
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
+  .brand--footer { justify-self: center; }
+  .footer-links { justify-content: center; }
+}
