@@ -44,7 +44,7 @@
   font-family: var(--serif);
   font-size: clamp(3.9rem, 6.35vw, 6.75rem);
   font-weight: 400;
-  line-height: .88;
+  line-height: .95;
   letter-spacing: -.045em;
   text-wrap: balance;
 }
@@ -268,6 +268,21 @@
   font-weight: 700;
   letter-spacing: .12em;
 }
+.path-overview-icon {
+  position: absolute;
+  top: 50%;
+  right: -16px;
+  z-index: 0;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(36, 24, 33, .17);
+  transform: translateY(-50%);
+}
+.path-overview-card--clinic .path-overview-icon { border-color: rgba(255, 255, 255, .18); }
+.path-overview-card strong,
+.path-overview-card small { position: relative; z-index: 1; }
 .path-overview-card strong {
   font-family: var(--serif);
   font-size: 1.52rem;

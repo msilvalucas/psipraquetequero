@@ -38,7 +38,14 @@
   border-radius: 50%;
   font-family: var(--serif);
   font-size: 1.35rem;
+  object-fit: cover;
+  flex-shrink: 0;
 }
+.site-header .brand-mark {
+  background: var(--cream);
+  transition: background .3s ease;
+}
+.site-header.is-scrolled .brand-mark { background: none; }
 .brand-copy { display: grid; line-height: 1.1; }
 .brand-copy strong { font-size: .9rem; }
 .brand-copy small { margin-top: 4px; font-size: .62rem; opacity: .62; }

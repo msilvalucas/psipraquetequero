@@ -5,23 +5,24 @@
    ========================================================= */
 
 :root {
-  /* Cores */
-  --ink: #241821;
-  --ink-soft: #4b3a46;
+  /* Cores — paleta @camiagencia (profissionalismo, público adulto):
+     olive #6c6654, navy #28384a, rust #744436, beige #d4c8ad. */
+  --ink: #28384a;
+  --ink-soft: #4b5c6e;
   --cream: #f4efe7;
   --paper: #fbf8f3;
-  --sand: #d9d0c5;          /* fundo da seção de caminhos */
-  --shell: #e6ddd1;         /* fundo do "Sobre" */
-  --night: #180f17;         /* rodapé */
-  --plum: #55436b;          /* card Clínica 360º */
+  --sand: #d4c8ad;          /* fundo da seção de caminhos */
+  --shell: #ece3d2;         /* fundo do "Sobre" */
+  --night: #161f29;         /* rodapé */
+  --plum: #744436;          /* card Clínica 360º */
   --white: #fff;
 
-  --lavender: #b8a8da;
-  --lavender-hover: #c8b9e7;
-  --lavender-soft: #ddd4ee;
-  --sage: #99a78f;
-  --sage-soft: #dce2d6;
-  --clay-soft: #efd8cc;
+  --lavender: #c1ae95;
+  --lavender-hover: #cabaa5;
+  --lavender-soft: #e3dbcf;
+  --sage: #918c7f;
+  --sage-soft: #ccc9c3;
+  --clay-soft: #cebeb9;
   --danger: #ffc3bd;
 
   /* Superfícies sobre fundo escuro */
@@ -34,11 +35,11 @@
   --line-dark-soft: rgba(255, 255, 255, .08);
 
   /* Superfícies sobre fundo claro */
-  --on-light-60: rgba(36, 24, 33, .6);
-  --line-light: rgba(36, 24, 33, .16);
-  --line-light-soft: rgba(36, 24, 33, .13);
+  --on-light-60: rgba(40, 56, 74, .6);
+  --line-light: rgba(40, 56, 74, .16);
+  --line-light-soft: rgba(40, 56, 74, .13);
 
-  --shadow: 0 32px 80px rgba(36, 24, 33, .16);
+  --shadow: 0 32px 80px rgba(40, 56, 74, .16);
 
   /* Tipografia — as fontes que o index.html realmente carrega. */
   --serif: "Newsreader", Georgia, serif;

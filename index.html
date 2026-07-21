@@ -23,7 +23,11 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/site.webmanifest" />
 
   <!-- Marca que o JS está vivo. Os estados iniciais escondidos das animações
        são todos prefixados com .js — sem script, nada some da página. -->
@@ -70,7 +74,7 @@
 
   <header class="site-header" data-header>
     <a class="brand" href="#inicio" aria-label="Clube PsiPraQueTeQuero — início">
-      <span class="brand-mark" aria-hidden="true">ψ</span>
+      <img class="brand-mark" src="assets/logo.png" alt="" width="40" height="40" aria-hidden="true" />
       <span class="brand-copy">
         <strong>PsiPraQueTeQuero</strong>
         <small>Clube de desenvolvimento profissional</small>
@@ -192,21 +196,25 @@
       <nav class="path-overview container" aria-label="Resumo dos quatro caminhos">
         <a class="path-overview-card path-overview-card--immersion" href="#produto-imersao">
           <span>01</span>
+          <img class="path-overview-icon" src="assets/imersao.jpeg" alt="" aria-hidden="true" />
           <strong>Imersão</strong>
           <small>Para aprofundar um tema pontual</small>
         </a>
         <a class="path-overview-card path-overview-card--crossing" href="#produto-travessia">
           <span>02</span>
+          <img class="path-overview-icon" src="assets/travessia.jpeg" alt="" aria-hidden="true" />
           <strong>Travessia</strong>
           <small>Para manter constância nos estudos</small>
         </a>
         <a class="path-overview-card path-overview-card--clinic" href="#produto-clinica360">
           <span>03</span>
+          <img class="path-overview-icon" src="assets/360.jpeg" alt="" aria-hidden="true" />
           <strong>Clínica 360º</strong>
           <small>Para estruturar a carreira clínica</small>
         </a>
         <a class="path-overview-card path-overview-card--singular" href="#produto-singular">
           <span>04</span>
+          <img class="path-overview-icon" src="assets/singular.jpeg" alt="" aria-hidden="true" />
           <strong>Singular</strong>
           <small>Para receber direção individual</small>
         </a>
@@ -406,7 +414,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <a class="brand brand--footer" href="#inicio">
-        <span class="brand-mark" aria-hidden="true">ψ</span>
+        <img class="brand-mark" src="assets/logo.png" alt="" width="40" height="40" aria-hidden="true" />
         <span class="brand-copy"><strong>PsiPraQueTeQuero</strong><small>Clube de desenvolvimento profissional</small></span>
       </a>
       <p>© <span data-current-year></span> Clube PsiPraQueTeQuero.</p>
@@ -424,7 +432,7 @@
     <div class="quiz-shell">
       <header class="quiz-header">
         <a class="brand brand--quiz" href="#" tabindex="-1">
-          <span class="brand-mark" aria-hidden="true">ψ</span>
+          <img class="brand-mark" src="assets/logo.png" alt="" width="40" height="40" aria-hidden="true" />
           <span class="brand-copy"><strong>PsiPraQueTeQuero</strong><small>Diagnóstico de caminho</small></span>
         </a>
         <div class="quiz-progress-wrap">
