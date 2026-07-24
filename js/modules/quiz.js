@@ -151,16 +151,41 @@ function renderResult() {
   );
 
   const cta = qs("[data-result-cta]");
+  const tracks = qs("[data-result-tracks]");
   const url = SITE_CONFIG.productUrls[primary[0]];
-  if (cta) {
-    cta.textContent = product.cta;
-    // Sem URL configurada, o CTA some em vez de fingir que leva a algum lugar.
-    if (url) {
-      cta.href = url;
-      cta.hidden = false;
-    } else {
+
+  // Travessia tem 3 turmas por abordagem: em vez de um único CTA, mostra
+  // um link por trilha e deixa a pessoa escolher a dela.
+  if (url && typeof url === "object") {
+    if (cta) {
       cta.removeAttribute("href");
       cta.hidden = true;
+    }
+    if (tracks) {
+      tracks.hidden = false;
+      qsa("[data-track]", tracks).forEach((link) => {
+        const trackUrl = url[link.dataset.track];
+        if (trackUrl) {
+          link.href = trackUrl;
+          link.hidden = false;
+        } else {
+          link.removeAttribute("href");
+          link.hidden = true;
+        }
+      });
+    }
+  } else {
+    if (tracks) tracks.hidden = true;
+    if (cta) {
+      cta.textContent = product.cta;
+      // Sem URL configurada, o CTA some em vez de fingir que leva a algum lugar.
+      if (url) {
+        cta.href = url;
+        cta.hidden = false;
+      } else {
+        cta.removeAttribute("href");
+        cta.hidden = true;
+      }
     }
   }
 
