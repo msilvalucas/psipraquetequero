@@ -77,6 +77,9 @@
   aspect-ratio: 1;
   border: 1px solid rgba(255, 255, 255, .1);
   border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(40, 56, 74, 0) 0%, rgba(40, 56, 74, .38) 60%, rgba(40, 56, 74, .96) 100%),
+    url("../assets/hero.jpg") center/cover no-repeat;
 }
 .visual-shell::before,
 .visual-shell::after {
@@ -449,8 +452,9 @@
   border-radius: 240px 240px 24px 24px;
   color: var(--cream);
   background:
-    radial-gradient(circle at 50% 35%, rgba(184, 168, 218, .65), transparent 38%),
-    linear-gradient(145deg, #443245, #211820);
+    linear-gradient(to top, rgba(33, 24, 32, .85) 0%, rgba(33, 24, 32, 0) 34%),
+    radial-gradient(circle at 50% 30%, rgba(184, 168, 218, .3), transparent 55%),
+    url("../assets/sobre.jpg") center 18%/cover no-repeat;
 }
 .about-visual::before {
   content: "";
@@ -459,7 +463,6 @@
   border: 1px solid rgba(255, 255, 255, .15);
   border-radius: inherit;
 }
-.about-monogram { font-family: var(--serif); font-size: 10rem; opacity: .88; }
 .about-caption {
   position: absolute;
   bottom: 26px;
