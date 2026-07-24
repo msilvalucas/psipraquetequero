@@ -11,7 +11,9 @@
  * chega ao CRM é um lead perdido, e o pior cenário é ninguém perceber.
  */
 export const SITE_CONFIG = {
-  leadEndpoint: "",
+  // Web App do Google Apps Script — grava cada lead numa linha da planilha.
+  leadEndpoint:
+    "https://script.google.com/macros/s/AKfycbxl6EkJoNOR0WDCxaXAhmbx_hZZ68egTzu5x9I7mvQakvG2t5v1l1hsziu3NNmlfEqL/exec",
   productUrls: {
     imersao: "",
     travessia: "",

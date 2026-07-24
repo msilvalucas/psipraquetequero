@@ -100,3 +100,48 @@ export const answerScores = {
     customSchedule: { imersao: 0, travessia: 0, clinica360: 1, singular: 5 },
   },
 };
+
+/**
+ * Texto de cada alternativa, igual ao que aparece nos `<label>` do
+ * index.html. Usado só pra deixar o lead legível no CRM — o cálculo da
+ * recomendação usa as chaves acima (`student`, `studyRoutine` etc.), nunca
+ * este texto.
+ */
+export const answerLabels = {
+  professionalMoment: {
+    student: "Sou estudante de Psicologia.",
+    newlyGraduated: "Sou recém-formado e estou iniciando os atendimentos.",
+    structuringCareer: "Já atuo, mas preciso estruturar melhor minha carreira.",
+    experiencedWithSpecificChallenges: "Já tenho trajetória e enfrento desafios específicos.",
+  },
+  mainNeed: {
+    specificTopic: "Aprofundar um tema específico.",
+    studyRoutine: "Criar uma rotina consistente de leitura e estudo.",
+    completeDevelopment: "Desenvolver diferentes competências para construir minha clínica.",
+    individualDirection: "Receber orientação para um desafio particular.",
+  },
+  preferredExperience: {
+    oneOffMeeting: "Um encontro pontual e intensivo.",
+    recurringStudyGroup: "Um grupo recorrente de estudos e troca.",
+    structuredProgram: "Uma formação estruturada com começo, meio e fim.",
+    individualMentoring: "Um acompanhamento individual e personalizado.",
+  },
+  currentSituation: {
+    specificQuestion: "Existe um assunto que preciso entender melhor.",
+    noStudyConsistency: "Tenho dificuldade para manter constância nos estudos.",
+    theoryWithoutStructure: "Conheço a teoria, mas ainda não estruturei minha carreira.",
+    genericSolutionsDoNotWork: "Meu problema é particular e soluções genéricas não funcionam.",
+  },
+  supportLevel: {
+    singleSession: "Orientação concentrada em um único encontro.",
+    mediatedGroup: "Mediação profissional dentro de um grupo.",
+    completeJourney: "Um percurso completo de desenvolvimento em turma.",
+    individualAttention: "Atenção individual voltada à minha realidade.",
+  },
+  availability: {
+    oneOff: "Uma atividade pontual.",
+    fortnightly: "Encontros quinzenais contínuos.",
+    fullProgram: "Compromisso com uma formação completa.",
+    customSchedule: "Uma agenda de acompanhamento individual.",
+  },
+};

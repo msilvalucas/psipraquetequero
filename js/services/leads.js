@@ -34,9 +34,13 @@ export async function saveLead(payload) {
   const timeout = setTimeout(() => controller.abort(), LEAD_TIMEOUT_MS);
 
   try {
+    // text/plain em vez de application/json: o Web App do Google Apps Script
+    // não trata o preflight OPTIONS do CORS. text/plain é "simple request" e
+    // não dispara preflight — o corpo continua sendo JSON, e o doPost() do
+    // script faz JSON.parse(e.postData.contents) normalmente.
     const response = await fetch(SITE_CONFIG.leadEndpoint, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify(payload),
       signal: controller.signal,
     });
@@ -44,7 +48,14 @@ export async function saveLead(payload) {
     if (!response.ok) {
       throw new LeadError(`Endpoint respondeu ${response.status}.`, { kind: "server" });
     }
-    return await response.json().catch(() => ({}));
+
+    const result = await response.json().catch(() => ({}));
+    // O Apps Script sempre responde 200, mesmo em erro — o status real vem
+    // no corpo (ver doPost() -> jsonResponse() no script da planilha).
+    if (result.status === "error") {
+      throw new LeadError(result.message || "O CRM recusou o cadastro.", { kind: "server" });
+    }
+    return result;
   } catch (error) {
     if (error instanceof LeadError) throw error;
     if (error.name === "AbortError") {

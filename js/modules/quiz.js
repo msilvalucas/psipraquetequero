@@ -1,6 +1,6 @@
 /** Quiz: máquina de estados do modal, do intro ao resultado. */
 import { SITE_CONFIG, TOTAL_QUESTIONS } from "../config.js";
-import { products } from "../data/products.js";
+import { products, answerLabels } from "../data/products.js";
 import { qs, qsa, on, setText } from "../utils/dom.js";
 import { prefersReducedMotion } from "../utils/motion.js";
 import { maskWhatsApp } from "../utils/phone.js";
@@ -174,6 +174,16 @@ function renderResult() {
   showScreen("result");
 }
 
+/** Troca as chaves internas das respostas (`student`, `studyRoutine`...) pelo texto exibido no quiz. */
+function translateAnswers(answers) {
+  return Object.fromEntries(
+    Object.entries(answers).map(([question, answer]) => [
+      question,
+      answerLabels[question]?.[answer] ?? answer,
+    ]),
+  );
+}
+
 async function handleLeadSubmit(event) {
   event.preventDefault();
   const form = event.currentTarget;
@@ -193,12 +203,14 @@ async function handleLeadSubmit(event) {
   }
 
   const data = Object.fromEntries(new FormData(form).entries());
+  const primaryKey = state.ranking[0]?.[0];
+  const secondaryKey = state.ranking[1]?.[0];
   const payload = {
     ...data,
     consent: Boolean(data.consent),
-    recommendation: state.ranking[0]?.[0],
-    secondaryRecommendation: state.ranking[1]?.[0],
-    answers: state.answers,
+    recommendation: products[primaryKey]?.title ?? primaryKey,
+    secondaryRecommendation: secondaryKey ? products[secondaryKey]?.title ?? secondaryKey : null,
+    answers: translateAnswers(state.answers),
     createdAt: new Date().toISOString(),
     source: "landing-page-quiz",
   };
